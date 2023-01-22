@@ -19,6 +19,7 @@
 
 
 import {
+    Box,
     Button,
   
     Center,
@@ -43,21 +44,17 @@ import {
 import { useNavigate } from 'react-router-dom';
   
   
-  export default function Otp(){
+  export default function SuccessPage(){
     const [otp, setOtp] = useState("")
     const navigate = useNavigate()
     console.log("OTP",otp)
 
 
 const handleClick = ()=>{
-    if(otp==="123456"){
-      navigate("/welcome")
-    }else{
-        alert("Enter valid otp")
-    }
+   navigate("/instagram")
 }
 
-
+var insta = JSON.parse(localStorage.getItem("insta")) || [];
     return (
       <Flex
         minH={'100vh'}
@@ -77,33 +74,29 @@ const handleClick = ()=>{
   
   
           <Heading marginBottom={"20px"} display={"inline"} lineHeight={1.1} fontSize={{ base: '2xl', md: '2xl' }}>
-          Please enter varification code send on 7356230040
+          Verified
           </Heading>
-          <FormControl>
-          <Center>
-            <HStack>
-              <PinInput onChange={setOtp}>
-                <PinInputField />
-                <PinInputField />
-                <PinInputField />
-                <PinInputField />
-                <PinInputField />
-                <PinInputField />
-              </PinInput>
-            </HStack>
-          </Center>
-        </FormControl>
+       <Box border={"1px solid"}   height="80px" borderRadius={"20px"} >
+          <Heading  marginTop={"30px"} fontSize={"20px"}  >{insta}</Heading>
+       </Box>
+       <Box  border={"1px solid"}  height="80px" borderRadius={"20px"}>
+       <Heading  marginTop={"30px"} fontSize={"20px"}>TikTok</Heading>
+       </Box>
          
           <Stack  >
-            <Flex marginTop={"340px"} gap={"10px"}>
-          <Button  height={"60px"}>
-            ←
+            <Flex marginTop={"200px"} gap={"10px"}>
+          <Button height={"60px"}
+              bg={'white'}
+              border=".3px solid"
+              width={"2500px"}
+              color={'black'}>
+          Skip for now
             </Button>
             <Button
             disabled
             height={"60px"}
               bg={'black'}
-              width={"300px"}
+              width={"2500px"}
               color={'white'}
               _hover={{
                 bg: 'brown.500',

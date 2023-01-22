@@ -1,7 +1,8 @@
 import './App.css';
+import Mainroutes from './components/Mainroutes';
 
 
-import Otp from './components/Otp';
+
 
 
 function App() {
@@ -9,7 +10,9 @@ function App() {
 
   return (
     <div className="App">
-    <Otp/>
+ <Mainroutes/>
+
+
     </div>
   );
 }

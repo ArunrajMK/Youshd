@@ -34,10 +34,24 @@ import "./login.css"
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Login(){
-  const [value, setValue] = useState()
+  const [value, setValue] = useState("")
+  const navigate = useNavigate()
+
+
+const handleClick = ()=>{
+  if(value.length<10){
+    alert("Enter valid Number")
+  }else{
+    navigate("/otp")
+  }
+}
+
+
+
   return (
     <Flex
       minH={'100vh'}
@@ -77,7 +91,9 @@ export default function Login(){
             color={'white'}
             _hover={{
               bg: 'brown.500',
-            }}>
+            }}
+            onClick={handleClick}
+            >
            Continue
           </Button>
           </Flex>
