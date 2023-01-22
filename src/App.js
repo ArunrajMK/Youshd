@@ -1,6 +1,7 @@
 import './App.css';
 
-import Login from './components/Login';
+
+import Otp from './components/Otp';
 
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
 
   return (
     <div className="App">
-    <Login/>
+    <Otp/>
     </div>
   );
 }
